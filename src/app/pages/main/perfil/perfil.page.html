@@ -1,0 +1,23 @@
+<app-header  title="Perfil"></app-header>
+
+<ion-content [fullscreen]="true">
+  
+<div class="app-logo">
+  <app-logo></app-logo>
+</div>
+  <div class="container">
+    
+    
+    <h1 class="user">{{user().name}}</h1>
+    <ion-item button detail>
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>{{user().email}}</ion-label>
+    </ion-item>
+    <ion-item button detail>
+      <ion-icon name="document-text-outline"></ion-icon>
+      <ion-label>{{user().rol}}</ion-label>
+    </ion-item>
+  </div>
+
+
+</ion-content>

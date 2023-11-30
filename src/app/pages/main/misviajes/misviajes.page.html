@@ -1,0 +1,32 @@
+
+
+<ion-content [fullscreen]="true"  >
+  <app-header  title="Mis viajes"></app-header>
+
+
+    
+  <ion-item *ngFor="let producto of viajes">
+
+    <ion-avatar slot="start">
+      <ion-img class="logo" src="assets/icon/home.png"></ion-img>    </ion-avatar>
+    <ion-label>
+      <h2>{{producto.partida}} -> {{producto.destino}}</h2>
+      <p>Viaje finalizado con exito</p>
+    </ion-label>
+
+    <ion-text color="dark" slot="end">
+      <h3>${{producto.valor}}</h3>
+    </ion-text>
+  </ion-item> 
+
+
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>

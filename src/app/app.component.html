@@ -1,0 +1,46 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title>Menu</ion-title>
+        <ion-icon slot="end" name="close" size="large" class="ion-padding" (click)="cerrarMenu()"></ion-icon>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list *ngIf="user().rol">
+        <ion-item  detail routerLink="/home" (click)="cerrarMenu()">
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          Inicio
+        </ion-item> 
+      </ion-list>
+      <ion-list>
+        <ion-item  detail routerLink="/auth" (click)="cerrarMenu()">
+          <ion-icon slot="start" name="enter-outline"></ion-icon>
+          Iniciar sesión
+        </ion-item> 
+      </ion-list>
+      <ion-list>
+        <ion-item  detail routerLink="/perfil" (click)="cerrarMenu()">
+          <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+          Perfil
+        </ion-item> 
+      </ion-list>
+      <ion-list>
+        <ion-item  detail routerLink="/misviajes" (click)="cerrarMenu()">
+          <ion-icon slot="start" name="clipboard-outline"></ion-icon>
+          Historial de viajes
+        </ion-item> 
+      </ion-list>
+      <ion-list>
+        <ion-item  detail routerLink="/auth" (click)="cerrarMenu()" (click)="signOut()" >
+          <ion-icon slot="start" name="arrow-back-circle-outline"></ion-icon>
+          Cerrar sesión
+        </ion-item> 
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  
+  <ion-router-outlet id="main"></ion-router-outlet>
+  
+</ion-app>

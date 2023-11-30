@@ -1,0 +1,50 @@
+<app-header  title="Inicio"></app-header>
+
+<ion-content>
+    <!--<div class="container">-->
+    <div *ngIf="user().rol == 'trabajador' " class="rol-conductor">
+        <div  class="home-page">
+            <ion-text id="u-text">Bienvenido, {{user().name}}</ion-text>
+            <p id="p-text">Empieza trabajar con nosotros!</p>
+                <ion-img class="logo" src="assets/icon/home.png"></ion-img>
+        </div>   
+    </div>
+    <div *ngIf="user().rol == 'trabajador' " class="rol-conductor2">
+        <div class="home-page2">
+            <ion-button (click)="crearviaje()" expand="block" class="btn">
+                <ion-icon slot="start" name="add"></ion-icon>
+                Publicar viaje
+            </ion-button>
+           
+        </div>
+    </div>
+
+
+
+
+    <div *ngIf="user().rol == 'cliente' " class="rol-cliente">
+        <div  class="home-page">
+            <ion-text id="u-text">Bienvenido, {{user().name}}</ion-text>
+            <p id="p-text">Empieza a viajar con nosotros!</p>
+                <ion-img class="logo" src="assets/icon/home.png"></ion-img>
+        </div>   
+    </div>
+    <div *ngIf="user().rol == 'cliente' " class="rol-cliente2">
+        <div class="home-page2">
+            <ion-button (click)="elegirviaje()" expand="block" class="btn">
+                <ion-icon slot="start" name="add"></ion-icon>
+                Buscar viaje
+            </ion-button>
+           
+        </div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+</ion-content>
